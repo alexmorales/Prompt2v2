@@ -1,0 +1,42 @@
+import java.util.Scanner;
+
+public class AhorroParaViaje {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        // Declaración de variables
+        double ahorroMensual, metaAhorro;
+        int meses = 0;
+
+        // Solicitar al usuario ingresar el ahorro mensual
+        System.out.print("Ingrese la cantidad de dinero que puede ahorrar cada mes: ");
+        ahorroMensual = sc.nextDouble();
+
+        // Validar que el ahorro mensual sea mayor que 0
+        while (ahorroMensual <= 0) {
+            System.out.print("El ahorro mensual debe ser mayor que 0. Ingrese nuevamente: ");
+            ahorroMensual = sc.nextDouble();
+        }
+
+        // Solicitar al usuario ingresar la meta de ahorro para el viaje
+        System.out.print("Ingrese la cantidad de dinero que necesita para el viaje: ");
+        metaAhorro = sc.nextDouble();
+
+        // Validar que la meta de ahorro sea mayor que 0
+        while (metaAhorro <= 0) {
+            System.out.print("La meta de ahorro debe ser mayor que 0. Ingrese nuevamente: ");
+            metaAhorro = sc.nextDouble();
+        }
+
+        // Calcular meses necesarios para alcanzar la meta de ahorro
+        while (metaAhorro > 0) {
+            meses++;
+            metaAhorro -= ahorroMensual;
+        }
+
+        // Mostrar el resultado
+        System.out.println("Necesitarás " + meses + " meses para alcanzar tu meta de ahorro.");
+
+        sc.close();
+    }
+}
