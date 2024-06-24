@@ -1,0 +1,37 @@
+Algoritmo AhorroParaViaje
+
+    // Declaración de variables
+    Definir ahorroMensual, metaAhorro como Real
+    Definir meses como Entero
+
+    // Solicitar al usuario ingresar el ahorro mensual
+    Escribir "Ingrese la cantidad de dinero que puede ahorrar cada mes:"
+    Leer ahorroMensual
+
+    // Validar que el ahorro mensual sea mayor que 0
+    Mientras ahorroMensual <= 0 Hacer
+        Escribir "El ahorro mensual debe ser mayor que 0. Ingrese nuevamente:"
+        Leer ahorroMensual
+    FinMientras
+
+    // Solicitar al usuario ingresar la meta de ahorro para el viaje
+    Escribir "Ingrese la cantidad de dinero que necesita para el viaje:"
+    Leer metaAhorro
+
+    // Validar que la meta de ahorro sea mayor que 0
+    Mientras metaAhorro <= 0 Hacer
+        Escribir "La meta de ahorro debe ser mayor que 0. Ingrese nuevamente:"
+        Leer metaAhorro
+    FinMientras
+
+    // Inicialización de variables
+    meses <- 0
+    Mientras metaAhorro > 0 Hacer
+        meses <- meses + 1
+        metaAhorro <- metaAhorro - ahorroMensual
+    FinMientras
+
+    // Mostrar el resultado
+    Escribir "Necesitarás ", meses, " meses para alcanzar tu meta de ahorro."
+
+FinAlgoritmo
